@@ -1,0 +1,369 @@
+
+.navbar {
+    width: 100%;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar_container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  height: 80px;
+}
+
+.navbar_container_left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  color: #FFD700;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #FFA500;
+}
+
+/* Navigation Links */
+.navbar_nav {
+    display: flex;
+    align-items: center;
+  gap: 2.5rem;
+}
+
+.nav_link {
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav_link:hover {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.nav_link_active {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.15);
+}
+
+.nav_link_active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+}
+
+/* Right Section */
+.navbar_container_right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar_container_right_button {
+  display: flex;
+  align-items: center;
+}
+
+.connected_section {
+  display: flex;
+  align-items: center;
+    gap: 1rem;
+}
+
+.connected_status {
+  display: flex;
+    align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+.connected_dot {
+  width: 8px;
+  height: 8px;
+  background: #4CAF50;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.connected_text {
+  color: #FFD700;
+  font-weight: 500;
+}
+
+.admin_button {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.admin_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.debug_button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.debug_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Profile Section */
+.navbar_container_right_profile_box {
+    position: relative;
+}
+
+.profile_image {
+  border-radius: 50%;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+    cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile_image:hover {
+  border-color: #FFD700;
+  transform: scale(1.05);
+}
+
+/* Mobile Menu */
+.navbar_container_right_menuBtn {
+    display: none;
+}
+
+.menuIcon {
+  font-size: 1.8rem;
+  color: #FFD700;
+    cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menuIcon:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 968px) {
+  .navbar_container {
+    padding: 0 1rem;
+    height: 70px;
+  }
+
+  .navbar_container_left {
+    gap: 1.5rem;
+}
+
+  .navbar_nav {
+    display: none;
+}
+
+  .navbar_container_right_menuBtn {
+    display: block;
+    }
+
+  .connected_section {
+    flex-direction: column;
+    gap: 0.5rem;
+    }
+
+  .connected_status {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar_container {
+    padding: 0 1rem;
+    }
+
+  .logo {
+    font-size: 2rem;
+    }
+
+  .connected_text {
+        display: none;
+    }
+
+  .connected_status {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    background: #4CAF50;
+    }
+}
+
+/* Maintenance Indicator */
+.maintenance_indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 193, 7, 0.15);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 0.5rem;
+  color: #FFC107;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.maintenance_indicator:hover {
+  background: rgba(255, 193, 7, 0.25);
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+.maintenance_icon {
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.maintenance_text {
+  font-weight: 600;
+}
+
+/* Tooltip */
+.maintenance_tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  z-index: 1001;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.tooltip_content {
+  background: rgba(10, 10, 20, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tooltip_icon {
+  color: #FFC107;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tooltip_text {
+  color: #e0e0e0;
+}
+
+.tooltip_text strong {
+  color: #FFC107;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.tooltip_text p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for maintenance indicator */
+@media screen and (max-width: 968px) {
+  .maintenance_indicator {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .maintenance_tooltip {
+    min-width: 250px;
+    right: -50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .maintenance_indicator {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .maintenance_text {
+    display: none;
+  }
+  
+  .maintenance_tooltip {
+    min-width: 200px;
+    right: -100px;
+  }
+}

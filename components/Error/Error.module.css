@@ -1,0 +1,126 @@
+
+
+.Error{
+    background-color: var(--overlay);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1111111;
+    top: 0;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.Error_box{
+    top: 25%;
+    left: 30%;
+    position: absolute;
+    background-color: var(--main-bg-color);
+    padding: 2rem 5rem;
+    border-radius: 1rem;
+    box-shadow: var( --box-shadow);
+    text-align: center;
+    width: 40%;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.Error_box_info p{
+    font-size: 1.3rem;
+    color: var( --icons-color);
+    line-height: 1.5;
+    margin: 1rem 0;
+}
+
+.Error_box_info_icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 0.6s ease-in-out;
+}
+
+.Error_box_info h3 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Error_box_info_actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.Error_box_info_actions button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.Error_box_info_actions button:first-child {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.Error_box_info_actions button:first-child:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.Error_box_info_actions button.primaryAction {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+}
+
+.Error_box_info_actions button.primaryAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@media screen and (max-width: 35em) {
+    .Error_box{
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        padding: 2rem;
+    }
+    
+    .Error_box_info_actions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .Error_box_info_actions button {
+      width: 100%;
+    }
+}

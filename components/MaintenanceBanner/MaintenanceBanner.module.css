@@ -1,0 +1,47 @@
+.maintenanceBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff3cd;
+  border-bottom: 1px solid #ffeeba;
+  padding: 0.75rem 0;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #856404;
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.message {
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+} 

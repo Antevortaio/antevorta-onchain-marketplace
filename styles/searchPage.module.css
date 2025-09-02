@@ -1,0 +1,568 @@
+.searchPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 2rem 0;
+}
+
+/* Animated particles */
+.particlesContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.goldParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 6px #FFD700, 0 0 12px #FFA500;
+  opacity: 0.6;
+}
+
+.searchWrapper {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Premium Header */
+.searchHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.premium_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.verified_icon {
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.premium_badge span {
+  font-size: 0.9rem;
+  color: #FFD700;
+  font-weight: 500;
+}
+
+.searchTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.gold_text {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.searchDescription {
+  font-size: 1.25rem;
+  color: #b0b0b0;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stats Grid */
+.stats_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stat_card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat_card:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.stat_icon {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat_label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.stat_value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Premium Filter Bar */
+.filterBar {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.filterIcon {
+  color: #FFD700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.priceInputs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.priceInput {
+  flex: 1;
+  min-width: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.priceInput:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.priceInput::placeholder {
+  color: #888;
+}
+
+.priceSeparator {
+  color: #888;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.filterSelect {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.filterSelect option {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.clearBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+}
+
+.clearIcon {
+  font-size: 1rem;
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 1rem;
+}
+
+.loadingText {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.emptyTitle {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.emptyDescription {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* NFT Grid */
+.nftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.nftCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nftCard:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.nftImageContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.nftImage {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.nftImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nftCard:hover .nftImage img {
+  transform: scale(1.05);
+}
+
+.nftBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.badgeText {
+  display: block;
+  color: #FFD700;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badgeSubtext {
+  display: block;
+  color: #888;
+  font-size: 0.7rem;
+}
+
+.nftInfo {
+  padding: 1.5rem;
+}
+
+.nftTitle {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.nftDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.priceSection,
+.tokenSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.detailLabel {
+  color: #888;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.priceValue {
+  color: #FFD700;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.tokenId {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sellerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.sellerAddress {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+}
+
+.buyBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  font-size: 1rem;
+}
+
+.buyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+}
+
+.sellBtnWrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Owner Badge */
+.ownerBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 215, 0, 0.9);
+  color: #000;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Action Buttons Container */
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Cancel Button */
+.cancelBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cancelBtn:hover {
+  background: linear-gradient(135deg, #ff6666 0%, #dd0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+}
+
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .stats_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filterBar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .searchWrapper {
+    width: 95%;
+  }
+  
+  .searchTitle {
+    font-size: 2.5rem;
+  }
+  
+  .searchDescription {
+    font-size: 1.1rem;
+  }
+  
+  .stats_grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nftGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .priceInputs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .priceSeparator {
+    display: none;
+  }
+
+  .sellBtnWrapper {
+    margin: 1.5rem 0;
+  }
+
+  /* Responsive adjustments for action buttons */
+  .actionButtons {
+    flex-direction: column;
+  }
+  
+  .buyBtn,
+  .cancelBtn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchTitle {
+    font-size: 2rem;
+  }
+  
+  .filterBar {
+    padding: 1.5rem;
+  }
+  
+  .nftCard {
+    margin: 0 1rem;
+  }
+}
